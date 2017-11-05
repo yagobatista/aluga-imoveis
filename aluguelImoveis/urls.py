@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^',include('aluguel.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^cadastro/', include('aluguel.urls')),
+    url(r'^pesquisa/', include('aluguel.urls')),
 ]
