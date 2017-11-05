@@ -1,12 +1,34 @@
  {% extends "aluguel/base.html" %} {% block content %}
-<main>
-  <div class="container">
-    <div class="row">
-      {% for imovel in lista %}
-      <p>{{imovel.nome}}</p>
-      {% endfor %}
-    </div>
-  </div>
-</main>
+<div class="container-fluid">
+  <div class="row">
+    <main class="col-md-9">
+      {%if bairro or cidade %}
+      <h1>Você pesquisou por: {{bairro}} {{cidade}}</h1>
+      {% endif %}
+      {% if lista %} {%for imoveis in lista%}
+      <p>{{imoveis.nome}} , {{imoveis.bairro}} , {{imoveis.cidade}} </p>
+      {%endfor%} {%else%}
+      <p>nenhum resultado encontrado</p>
+      {% endif %}
 
+    </main>
+    <aside class="col-md-3">
+      <nav class="navbar">
+        <form class="" action="/pesquisa/" method="get">
+          <div class="">
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" class="form-control" placeholder="Bairro">
+          </div>
+          <div class="">
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" class="form-control" placeholder="Cidade">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-default">Pesquisar</button>
+          </div>
+        </form>
+      </nav>
+    </aside>
+  </div>
+</div>
 {% endblock %}

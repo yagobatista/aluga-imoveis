@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.db.models import Q
 from django.shortcuts import render,redirect
 from aluguel.models import Aluguel
 from aluguel.forms import AluguelForm
@@ -12,14 +12,18 @@ def home(request):
 
 
 def pesquisa(request):
-    if 'q' in request.GET:
-        q = request.GET['q']
-        lista = Aluguel.objects.filter(bairro=q)
-        return render(request, 'aluguel/pesquisa.html',
-                      {'lista': lista, 'query': q})
-    else:
-        message = 'You submitted an empty form.'
-        return HttpResponse(message)
+    filters = None
+    vals = {}
+    if 'bairro' in request.GET:
+        filters =  Q(bairro__contains = request.GET['bairro'])
+        vals['bairro'] = request.GET['bairro']
+    if 'cidade' in request.GET:
+        filters = filters & Q(cidade__contains = request.GET['cidade'])
+        vals['cidade'] = request.GET['cidade']
+
+    lista = Aluguel.objects.filter(filters)
+    vals ['lista'] = lista
+    return render(request, 'aluguel/index.html',vals )
 
 def cadastro(request):
     form = AluguelForm(request.POST or None)
