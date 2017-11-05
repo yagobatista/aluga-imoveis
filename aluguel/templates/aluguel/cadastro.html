@@ -8,7 +8,7 @@
 
   <body>
     <section>
-      <form class="form-control" method="post">
+      <form class="form-control" method="post" enctype="multipart/form-data">
         {% csrf_token%} {{form}}
         <button type="submit" name="button">salvar</button>
       </form>
