@@ -30,7 +30,7 @@ def cadastro(request):
         form = AluguelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render(request,'aluguel/cadastro-sucesso.html')
+            return render(request,'aluguel/cadastro-sucesso.html',{'form': form})
         else:
             return render(request,'aluguel/cadastro.html',{'form': form})
     else:

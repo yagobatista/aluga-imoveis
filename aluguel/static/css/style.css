@@ -9,3 +9,15 @@ button[type=submit] {
 #cadastro .campo {
   margin-bottom: 1em;
 }
+
+article.imovel h1 {
+  font-size: 1.6em;
+}
+
+article.imovel {
+  margin-bottom: 1.2em;
+}
+
+article.imovel h2 {
+  font-size: 1.2em;
+}

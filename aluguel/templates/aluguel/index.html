@@ -8,14 +8,17 @@
       {% if lista %}
       <section>
         {%for imoveis in lista%}
-        <div class="row">
-          <div class="col-md-3">
-            <img src="{{imoveis.imagem.url}}" alt="" class="img-full">
+        <article class="imovel">
+          <div class="row">
+            <div class="col-md-3 col-xs-12">
+              <img src="{{imoveis.imagem.url}}" alt="" class="img-full">
+            </div>
+            <div class="col-md-9 col-xs-12">
+              <h1>Nome do proprietario: <span>{{imoveis.nome}}</span><br>Telefone para contato:<span>{{imoveis.telefone}}</span> </h1>
+              <h2>Endereço: {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
+            </div>
           </div>
-          <div class="col-md-9">
-            <p>{{imoveis.nome}} , {{imoveis.bairro}} , {{imoveis.cidade}} , </p>
-          </div>
-        </div>
+        </article>
         {%endfor%}
       </section>
       {%else%}
