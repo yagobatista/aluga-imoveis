@@ -26,9 +26,10 @@ def pesquisa(request):
     return render(request, 'aluguel/index.html',vals )
 
 def cadastro(request):
-    form = AluguelForm(request.POST or None)
     if request.method == 'POST':
+        form = AluguelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return render(request,'aluguel/cadastro-sucesso.html')
-    return render(request,'aluguel/cadastro.html',{'form': form})
+        else:
+            return render(request,'aluguel/cadastro.html',{'form': form})

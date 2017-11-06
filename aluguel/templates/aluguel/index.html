@@ -5,9 +5,20 @@
       {%if bairro or cidade %}
       <h1>Você pesquisou por: {{bairro}} {{cidade}}</h1>
       {% endif %}
-      {% if lista %} {%for imoveis in lista%}
-      <p>{{imoveis.nome}} , {{imoveis.bairro}} , {{imoveis.cidade}} </p>
-      {%endfor%} {%else%}
+      {% if lista %}
+      <section>
+        {%for imoveis in lista%}
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{{imoveis.imagem.url}}" alt="" class="img-full">
+          </div>
+          <div class="col-md-9">
+            <p>{{imoveis.nome}} , {{imoveis.bairro}} , {{imoveis.cidade}} , </p>
+          </div>
+        </div>
+        {%endfor%}
+      </section>
+      {%else%}
       <p>nenhum resultado encontrado</p>
       {% endif %}
 

@@ -3,4 +3,4 @@ from aluguel.models import Aluguel
 class AluguelForm(ModelForm):
     class Meta:
         model = Aluguel
-        fields = ['nome','telefone','rua','numero','cidade','bairro']
+        fields = ['nome','telefone','imagem','rua','numero','cidade','bairro']
