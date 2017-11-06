@@ -1,2 +1,2 @@
 # aluga-imoveis
-Desafio proposto pela finxi,http://finxi.com.br/
+Desafio proposto pela empresa finxi, http://finxi.com.br/
