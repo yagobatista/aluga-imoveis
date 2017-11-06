@@ -13,10 +13,11 @@ class AluguelAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
-
+    def has_edit_permission(self, request, obj=None):
+        return False
     def save_model(self, request, obj, form, change):
         #Return nothing to make sure user can't update any data
         pass
-    readonly_fields = ('nome','telefone','rua','numero','cidade','bairro',)
-    list_display = ('nome','telefone')
+    readonly_fields = ('nome','telefone','imagem','rua','numero','cidade','bairro',)
+    list_display = ('nome','telefone' , 'imagem')
 admin.site.register(Aluguel,AluguelAdmin)

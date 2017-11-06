@@ -33,3 +33,6 @@ def cadastro(request):
             return render(request,'aluguel/cadastro-sucesso.html')
         else:
             return render(request,'aluguel/cadastro.html',{'form': form})
+    else:
+        form = AluguelForm()
+        return render(request,'aluguel/cadastro.html',{'form':form})

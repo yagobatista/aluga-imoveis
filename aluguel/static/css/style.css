@@ -1,3 +1,11 @@
 .img-full {
   width: 100%;
 }
+
+button[type=submit] {
+  float: right;
+}
+
+#cadastro .campo {
+  margin-bottom: 1em;
+}
