@@ -3,7 +3,7 @@
   <div class="row">
     <main class="col-md-9">
       {%if bairro or cidade %}
-      <h1>Você pesquisou por: {{bairro}} {{cidade}}</h1>
+      <h1>Você pesquisou por: {{rua}} {{bairro}} {{cidade}}</h1>
       {% endif %}
       {% if lista %}
       <section>
@@ -16,32 +16,38 @@
             <div class="col-md-9 col-xs-12">
               <div class="">
                 <h1>Nome do proprietario: <span>{{imoveis.nome}}</span><br>Telefone para contato:<span>{{imoveis.telefone}}</span> </h1>
-                <h2>Endereço: {{imoveis.rua}} ,n {{imoveis.numero}}, {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
+                <h2>Endereço: {{imoveis.rua}},n {{imoveis.numero}}, {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
               </div>
-              <div class="float-right">
-                <span>Valor de locação</span>
-                <span>{{imovel.valor}}</span>
-              </div>
+              {%if imoveis.valor and imoveis > 0%}
+                <div class="float-right">
+                  <span>Valor de locação: </span>
+                  <span class="valor">R$ {{imoveis.valor}}</span>
+                </div>
+              {%endif%}
             </div>
           </div>
         </article>
         {%endfor%}
       </section>
       {%else%}
-      <p>nenhum resultado encontrado</p>
+      <p>Nenhum resultado foi encontrado</p>
       {% endif %}
 
     </main>
     <aside class="col-md-3">
-      <nav class="navbar">
+      <nav class="navbar fix">
         <form class="" action="/pesquisa/" method="get">
           <div class="">
+            <label for="rua">Rua</label>
+            <input type="text" name="rua" class="form-control" value="{{rua}}" placeholder="rua">
+          </div>
+          <div class="">
             <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" class="form-control" placeholder="Bairro">
+            <input type="text" name="bairro" class="form-control"value="{{bairro}}"  placeholder="Bairro">
           </div>
           <div class="">
             <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" class="form-control" placeholder="Cidade">
+            <input type="text" name="cidade" class="form-control" value="{{cidade}}"  placeholder="Cidade">
           </div>
           <div>
             <button type="submit" class="btn btn-default">Pesquisar</button>

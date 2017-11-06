@@ -21,3 +21,30 @@ article.imovel {
 article.imovel h2 {
   font-size: 1.2em;
 }
+
+div.footer-bottom {
+  margin-top: 2em;
+  background-color: #bbb;
+  color: #fff;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+div.copyright a {
+  color: #fff
+}
+
+span.valor {
+  font-size: 1.8em;
+  color: #333;
+}
+
+div.copyright a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+nav.fix {
+  position: fixed;
+}

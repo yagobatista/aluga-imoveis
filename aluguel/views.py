@@ -20,7 +20,9 @@ def pesquisa(request):
     if 'cidade' in request.GET:
         filters = filters & Q(cidade__contains = request.GET['cidade'])
         vals['cidade'] = request.GET['cidade']
-
+    if 'rua' in request.GET:
+        filters = filters & Q(rua__contains = request.GET['rua'])
+        vals['rua'] = request.GET['rua']
     lista = Aluguel.objects.filter(filters)
     vals ['lista'] = lista
     return render(request, 'aluguel/index.html',vals )
