@@ -10,6 +10,14 @@ button[type=submit] {
   margin-bottom: 1em;
 }
 
+#cadastro {
+  margin-bottom: 130px;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
 article.imovel h1 {
   font-size: 1.6em;
 }

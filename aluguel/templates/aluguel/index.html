@@ -16,7 +16,7 @@
             <div class="col-md-9 col-xs-12">
               <div class="">
                 <h1>Nome do proprietario: <span>{{imoveis.nome}}</span><br>Telefone para contato:<span>{{imoveis.telefone}}</span> </h1>
-                <h2>Endereço: {{imoveis.rua}},n {{imoveis.numero}}, {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
+                <h2>Endereço: {{imoveis.rua}}, n&#186; {{imoveis.numero}}, {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
               </div>
               {%if imoveis.valor and imoveis > 0%}
                 <div class="float-right">
@@ -39,7 +39,7 @@
         <form class="" action="/pesquisa/" method="get">
           <div class="">
             <label for="rua">Rua</label>
-            <input type="text" name="rua" class="form-control" value="{{rua}}" placeholder="rua">
+            <input type="text" name="rua" class="form-control" value="{{rua}}" placeholder="Rua">
           </div>
           <div class="">
             <label for="bairro">Bairro</label>
