@@ -8,14 +8,20 @@
       {% if lista %}
       <section>
         {%for imoveis in lista%}
-        <article class="imovel">
+        <article class="imovel thumbnail">
           <div class="row">
             <div class="col-md-3 col-xs-12">
               <img src="{{imoveis.imagem.url}}" alt="" class="img-full">
             </div>
             <div class="col-md-9 col-xs-12">
-              <h1>Nome do proprietario: <span>{{imoveis.nome}}</span><br>Telefone para contato:<span>{{imoveis.telefone}}</span> </h1>
-              <h2>Endereço: {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
+              <div class="">
+                <h1>Nome do proprietario: <span>{{imoveis.nome}}</span><br>Telefone para contato:<span>{{imoveis.telefone}}</span> </h1>
+                <h2>Endereço: {{imoveis.rua}} ,n {{imoveis.numero}}, {{imoveis.bairro}}, {{imoveis.cidade}}</h2>
+              </div>
+              <div class="float-right">
+                <span>Valor de locação</span>
+                <span>{{imovel.valor}}</span>
+              </div>
             </div>
           </div>
         </article>

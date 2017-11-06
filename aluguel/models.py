@@ -11,6 +11,7 @@ class Aluguel(models.Model):
     numero = models.IntegerField( )
     cidade = models.CharField(max_length= 250 )
     bairro = models.CharField(max_length= 250 )
-    imagem = models.ImageField(upload_to='aluguel/',default='None')
+    imagem = models.ImageField(upload_to='aluguel/')
+    valor = models.IntegerField(default='0')
     def __str__(self):
         return self.nome;
